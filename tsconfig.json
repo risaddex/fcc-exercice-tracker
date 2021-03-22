@@ -7,9 +7,9 @@
     "esModuleInterop": true,
     "inlineSourceMap": true,
     "watch": true,
-    "pretty": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "incremental": true
   },
-  "exclude": ["node_modules/**"],
+  "exclude": ["node_modules", "build"],
   "include":["**.ts"]
 }

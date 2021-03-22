@@ -1,5 +1,6 @@
 import User from '../models/users.model';
 import debug from 'debug';
+import { IExercise } from '../models/types';
 
 
 const log: debug.IDebugger = debug('app:user-service');
@@ -30,6 +31,14 @@ class UsersService {
   }
   async getUserByEmailWithPassword(email: string) {
     return User.getUserByEmailWithPassword(email);
+  }
+
+  async createExercise(exercise: IExercise) {
+    return User.addExercise(exercise)
+  }
+
+  async getUserLogsById(queryParams: string) {
+    return User.getLogsById(queryParams)
   }
 }
 

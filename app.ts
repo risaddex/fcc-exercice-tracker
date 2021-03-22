@@ -7,7 +7,7 @@ import path from 'path';
 import morgan from 'morgan'
 
 
-//? MODEL > SERVICE > CONTROLLER > ROUTER > APP
+//! MODEL > SERVICE > CONTROLLER > ROUTER > APP
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
 const port = 3000;
