@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc -b",
     "dev": "tsc | nodemon ./dist/app.js",
-    "start": "npm run build && node ./dist/app.js",
+    "start": "node ./dist/app.js",
+    "prestart": "npm run build",
     "debug": "export DEBUG=app* && npm run dev"
   },
   "dependencies": {
