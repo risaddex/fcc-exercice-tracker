@@ -7,16 +7,30 @@ export interface IUser extends Document {
   exercises?: IExercise[];
 }
 
-export type IExercise =  {
+export type IExerciseParams =  {
   userId: string;
   description: String;
+  duration: number;
+  date: string,
+}
+
+export type IExercise = {
+  userId?: string;
+  description: String;
   duration: Number;
-  date: Date;
+  date: string
+}
+
+export interface IExerciseResponse {
+  error: boolean;
+  status: number;
+  log?: string;
+  exercises: IExercise[]
 }
 
 export type ILogParams = {
   userId: string;
   from: Date;
   to: Date;
-  limit: Number
+  limit: number
 }

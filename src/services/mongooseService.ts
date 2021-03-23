@@ -9,7 +9,6 @@ class MongooseService {
   private mongooseOptions: mongoose.ConnectionOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000,
     useFindAndModify: false,
   };
 
@@ -25,7 +24,8 @@ class MongooseService {
     log('Attempting MongoDB connection (will retry if needed)');
     mongoose
       .connect(
-        process.env.DB_URI || '',
+        // @ts-ignore
+        process.env.DB_URI|| 'mongodb://127.0.0.1:27017',
         this.mongooseOptions
       )
       .then(() => {
@@ -34,9 +34,9 @@ class MongooseService {
       .catch((err) => {
         const retrySeconds = 5;
         log(
-          `MongoDB connection unsuccessful (will retry #${++this
+          `MongoDB connection failed (will retry #${++this
             .count} after ${retrySeconds} seconds):`,
-          err
+          err.reason
         );
         setTimeout(this.connectWithRetry, retrySeconds * 1000);
       });
