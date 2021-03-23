@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "dev": " tsc | nodemon ./build/app.js",
-    "start": "npm run build && node ./build/app.js",
-    "debug": "export DEBUG=app* && npm run dev"
+    "dev": "tsc | nodemon ./build/app.js",
+    "start": "npm build && node ./build/app.js",
+    "debug": "export DEBUG=app* && npm dev"
   },
   "dependencies": {
     "cors": "^2.8.5",
