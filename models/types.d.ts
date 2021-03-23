@@ -1,7 +1,7 @@
 import { Types, Document } from 'mongoose';
 
 export interface IUser extends Document {
-  _id:Types.ObjectId
+  _id?:Types.ObjectId
   userId?: string;
   username?: string;
   exercises?: IExercise[];

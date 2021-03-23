@@ -1,10 +1,9 @@
 import mongoose from 'mongoose';
 import debug from 'debug';
+require('dotenv').config();
 
-console.log(process.env.DB_URI)
 const log: debug.IDebugger = debug('app:mongoose-service');
 
-require('dotenv').config({ path: __dirname+'/.env' });
 class MongooseService {
   private count = 0;
   private mongooseOptions: mongoose.ConnectionOptions = {

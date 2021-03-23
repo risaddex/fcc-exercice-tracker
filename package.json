@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "build": "tsc",
     "dev": " tsc | nodemon ./build/app.js",
-    "start": "tsc && node ./build/app.js",
-    "debug": "export DEBUG=app* && npm run dev"
+    "start": "node ./build/app.js",
+    "debug": "export DEBUG=app* && pnpm dev"
   },
   "dependencies": {
     "cors": "^2.8.5",
